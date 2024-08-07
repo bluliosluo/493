@@ -1,0 +1,146 @@
+<!-- =========== Winter 2024 EECS 493 Assignment 3 Starter Code =========== -->
+<html>
+  <head>
+    <title>Asteroids</title>
+    <!-- JS -->
+    <script src="scripts/jquery.min.js"></script>
+    <script src="scripts/page.js"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="style/index.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=VT323&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="outer-container">
+      <div class="game-window">
+        <!-- ================ ASSIGNMENT 2 CODE GOES HERE ================ -->
+        <div class="header">
+          <img
+            src="src/asteroid.png"
+            alt="Left asteroid"
+            class="asteroid-png"
+          />
+          <h1>Asteroids</h1>
+          <img
+            src="src/asteroid.png"
+            alt="Right asteroid"
+            class="asteroid-png"
+          />
+        </div>
+        <div class="adding-background">
+          <div id="main-menu">
+            <div id="menu-buttons">
+              <button id="play-game">Play game!</button>
+              <button id="settings-button">Settings</button>
+            </div>
+          </div>
+          <!-- Settings -->
+          <div id="settings-panel">
+            <h2>Settings</h2>
+            <div class="volume-control">
+              <h2>
+                <span class="volume-label">Volume:</span>
+                <span id="volume-value">50</span>
+              </h2>
+              <div class="slidecontainer">
+                <input
+                  type="range"
+                  class="slider"
+                  id="volume-slider"
+                  min="1"
+                  max="100"
+                  value="50"
+                />
+              </div>
+            </div>
+            <div class="difficulty">
+              <h2>Difficulty</h2>
+              <div class="difficulty-buttons">
+                <button class="difficulty-button" id="easy">Easy</button>
+                <button class="difficulty-button selected" id="normal">
+                  Normal
+                </button>
+                <button class="difficulty-button" id="hard">Hard</button>
+              </div>
+            </div>
+            <button class="close-settings">Close</button>
+          </div>
+        </div>
+        <!-- Tutorial -->
+        <div id="tutorial">
+          <h2 class="tutorial-heading">How to play</h2>
+          <p class="tutorial-text">
+            <span class="bold-text">Avoid </span
+            ><span class="italic-text">asteroids</span>!
+          </p>
+          <img src="src/asteroid.png" alt="Asteroid" class="tutorial-png" />
+
+          <p class="tutorial-text">
+            <span class="bold-text">Collect </span
+            ><span class="italic-text">shields</span>!
+            <span class="bold-text">Travel </span>through
+            <span class="italic-text">portals</span> to the next level!
+          </p>
+          <div class="tutorial-images">
+            <img src="src/shield.gif" alt="Shield" class="tutorial-png" />
+            <img src="src/port.gif" alt="Port" class="tutorial-png" />
+          </div>
+          <p class="tutorial-text">
+            <span class="bold-text">Gain</span> as many
+            <span class="italic-text">points</span> as possible!
+          </p>
+          <button id="start-game">Start</button>
+        </div>
+        <!-- =================== ASSIGNMENT 2 CODE END =================== -->
+
+        <!-- Actual Game -->
+        <div id="actual-game">
+          <!-- Get Ready -->
+          <div id="get-ready-container">
+            <h2 class="tutorial-heading">Get Ready!</h2>
+            <img src="src/arrowkeys.png" alt="arrowkeys" class="arrowkey-png" />
+            <p class="tutorial-text">Use arrow keys to move.</p>
+          </div>
+          <!-- Asteroids -->
+          <div id="player">
+            <img src="src/player/player.gif" alt="Rocket" />
+          </div>
+
+          <div class="asteroidSection"></div>
+          <!-- <div class="shield"></div>
+          <div class="portal"></div> -->
+          <!-- Score Panel -->
+          <div id="scoreboard">
+            <div class="scoreboard-item">
+              <span class="label">Score</span>
+              <p id="score-value">0</p>
+            </div>
+            <div class="scoreboard-item">
+              <span class="label">Danger</span>
+              <p id="danger-value">20</p>
+            </div>
+            <div class="scoreboard-item">
+              <span class="label">Level</span>
+              <p id="level-value">1</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Gameover -->
+        <div id="game-over-container">
+          <div id="game-over">
+            <h2>Game Over!</h2>
+            <p>You have to fix your spaceship!</p>
+            <p><span id="final-score">0</span></p>
+            <button class="start-over">Start Over</button>
+          </div>
+        </div>
+      </div>
+      <!-- end game-window -->
+    </div>
+    <!-- end outer-container -->
+  </body>
+</html>

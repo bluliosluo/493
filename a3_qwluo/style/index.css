@@ -1,0 +1,395 @@
+/* ============ Winter 2024 EECS 493 Assignment 3 Starter Code ============ */
+
+/* Main Containers */
+body,
+button {
+  font-family: VT323;
+}
+
+button {
+  font-size: xx-large;
+}
+
+.outer-container {
+  height: 720px;
+  width: 1280px;
+  background: #eee;
+  border: 5px solid gainsboro;
+}
+
+.game-window {
+  height: 720px;
+  width: 1280px;
+  float: left;
+  position: relative;
+
+}
+
+/* Game Section */
+#actual-game {
+  height: 720px;
+  width: 1280px;
+  background-color: white;
+  z-index: 10;
+  right: 0px;
+  top: 0px;
+}
+
+.curAsteroid {
+  position: absolute;
+  height: 42px;
+  width: 42px;
+  z-index: 9;
+  right: 0px;
+  top: 0px;
+}
+
+.curAsteroid img {
+  position: relative;
+  z-index: 10;
+  height: 80px;
+  left: -17px;
+  top: -15px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+/* Add your stylings here */
+.header {
+  height: 100px;
+  background-color: darkslateblue;
+  border-bottom: 6px groove;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  color: white;
+  font-size: 100px;
+}
+
+.header h1 {
+  font-size: 100px;
+  color: white;
+}
+
+.asteroid-png {
+  height: 100px;
+  width: auto;
+}
+
+.adding-background, #game-over-container {
+  background-image: url('../src/frontpage_background.jpg');
+  background-size: cover;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  display: flex;
+}
+
+#menu-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  /* margin-top: 20px; */
+}
+
+#menu-buttons button {
+  width: 200px;
+  height: 100px;
+  background-color: darkslateblue;
+  color: white;
+  text-align: center;
+}
+
+#settings-panel {
+  width: 600px;
+  height: 690px;
+  position: absolute;
+  background: darkslateblue;
+  border: 5px solid gainsboro;
+  box-sizing: border-box;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px;
+  
+}
+
+#settings-panel h2,
+.volume-label,
+.difficulty h2 {
+  font-size: 50px;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+  margin: 0;
+}
+
+#volume-value {
+  font-weight: normal;
+  font-size: 50px;
+  color: white;
+}
+
+.volume-control {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.slidecontainer {
+  height: 25px;
+  width: 100%;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 25px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  background: #04AA6D;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  background: #04AA6D;
+  cursor: pointer;
+}
+
+#volume-value {
+  color: white;
+  font-size: 50px;
+}
+
+.difficulty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.difficulty-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.difficulty-button {
+  width: 180px;
+  height: 100px;
+  background-color: purple;
+  color: white;
+  border: 2px solid transparent;
+}
+
+.difficulty-button.selected {
+  border-color: yellow;
+}
+
+.close-settings {
+  width: 180px;
+  height: 100px;
+  background-color: purple;
+  color: white;
+  border: 2px solid transparent;
+  cursor: pointer;
+  margin-top: 40px;
+}
+
+#tutorial {
+  height: 720px;
+  width: 1280px;
+  background-color: gainsboro;
+  border: 2px solid #B0B0B0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.tutorial-heading {
+  font-size: 75px;
+  font-weight: bold;
+  margin: 10px;
+}
+
+.tutorial-text {
+  font-size: 50px;
+  text-align: center;
+  margin: 10px 10px;
+}
+
+.bold-text {
+  font-weight: bold;
+}
+
+.italic-text {
+  font-style: italic;
+}
+
+.tutorial-images {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.tutorial-png {
+  width: 100px;
+  height: auto;
+  margin: 0 40px;
+}
+
+#start-game {
+  width: 200px;
+  height: 75px;
+  font-size: 30px;
+  margin-top: 20px;
+  background-color: gainsboro;
+  border: 2px solid #B0B0B0;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Add your stylings here */
+
+/* #game-over-container {
+  background-image: url('../src/frontpage_background.jpg');
+  background-size: cover;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  display: flex;
+} */
+
+
+#game-over {
+  background: darkslateblue;
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+#game-over h2,
+#game-over p {
+  color: white;
+  margin: 10px 0;
+  text-transform: uppercase;
+}
+
+#start-over {
+  background-color: white;
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  font-size: large;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+
+#get-ready-container {
+  height: 720px;
+  width: 1280px;
+  background-color: white;
+  border: 2px solid #B0B0B0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+
+#game-over-container {
+  width: 100%;
+  height: 100%;
+
+  display: flex; 
+  justify-content: center;
+  align-items: center; 
+  position: absolute; 
+  top: 0;
+  left: 0; 
+}
+/* #get-ready-container {
+  gap: 50px;
+} */
+
+#scoreboard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  top: 20px;
+  right: 100px;
+  background-color: transparent;
+  color: black;
+  gap: 0px;
+  /* border-radius: 5px; */
+  z-index: 1000;
+  font-size: 50px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.scoreboard-item {
+  margin-bottom: 0px;
+  display: flex;
+  gap: 0px;
+  flex-direction: column;
+  align-items: center;
+  /* text-align: center; */
+}
+
+.scoreboard-item p {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+}
+
+
+.portal,
+.shield {
+  height: 62px; 
+  width: 62px;
+  position: absolute;
+}
+
+#player {
+  position: absolute;
+  top: 50%; 
+  left: 50%;
+  width: 62px;
+  height: 62px;
+  transform: translateX(-50%);
+}
